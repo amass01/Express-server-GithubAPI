@@ -1,0 +1,24 @@
+{
+  "name": "expserver",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^3.4.6",
+    "body-parser": "^1.15.2",
+    "describe": "^1.2.0",
+    "env2": "^2.1.1",
+    "express": "^4.14.0",
+    "jade": "^1.11.0",
+    "mocha": "^3.2.0",
+    "nodemon": "^1.11.0",
+    "request": "^2.79.0",
+    "request-promise": "^4.1.1"
+  }
+}
