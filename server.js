@@ -22,26 +22,26 @@ app.get('/login', (req, res) => {
   const redirect_uri = 'http://localhost:3000/welcome';
   const url = 'http://github.com/login/oauth/authorize/';
   res.redirect(`${url}?client_id=${client_id}&redirect_uri=${redirect_uri}`)
-})
+});
 
 app.get('/welcome', (req, res) => {
-  var url = 'https://github.com/login/oauth/access_token'
-  var header = {
+  const url = 'https://github.com/login/oauth/access_token';
+  const header = {
     accept: 'application/json'
-  }
-  var form = {
+  };
+  const form = {
     client_id: process.env.CLIENT_ID,
     code: req.query.code,
     client_secret: process.env.CLIENT_SECRET
-  }
+  };
   request.post({url:url, headers: header, form:form},(error, response, body) => {
-    if (!error && response.statusCode == 200) {
-      var body = JSON.parse(body)
-      var accessToken = body.access_token;
+    if (!error && response.statusCode === 200) {
+      const body = JSON.parse(body);
+      const accessToken = body.access_token;
       res.render('layouts/logged',{accessToken:accessToken})
     }
   })
-})
+});
 
 app.listen(port, () => {
   console.log('server is running on http://localhost:%s', port);
