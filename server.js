@@ -3,7 +3,7 @@ const app = express();
 const env = require('env2')('./config.env');
 const request = require('request');
 const qs = require('querystring');
-let path = require('path');
+const path = require('path');
 
 let port = process.env.PORT || 3000;
 
@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/login', (req, res) => {
-  let client_id = process.env.CLIENT_ID;
+  const client_id = process.env.CLIENT_ID;
   const redirect_uri = 'http://localhost:3000/welcome';
   const url = 'http://github.com/login/oauth/authorize/';
   res.redirect(`${url}?client_id=${client_id}&redirect_uri=${redirect_uri}`)
@@ -36,7 +36,7 @@ app.get('/welcome', (req, res) => {
   };
   request.post({url:url, headers: header, form:form},(error, response, body) => {
     if (!error && response.statusCode === 200) {
-      const body = JSON.parse(body);
+      body = JSON.parse(body);
       const accessToken = body.access_token;
       res.render('layouts/logged',{accessToken:accessToken})
     }
