@@ -2,10 +2,10 @@
 
 accessing githubapi with node.js and ejs plus jade engine. for self learning.
 
-instructoins:
-1) clone the repo
-2) npm install in your terminal
-3) npm start  in your terminal
+instructures:
+* clone the repo
+* npm install in your terminal
+* npm start  in your terminal
 
 nodemon is also included.
 
