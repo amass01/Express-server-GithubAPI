@@ -9,4 +9,4 @@ instructures:
 
 nodemon is also included.
 
-please, issue anything u dont understand/improve the code..
+please, issue anything u dont understand/improves the code..
