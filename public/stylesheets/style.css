@@ -1,6 +1,9 @@
-button{
-  margin-top: 1em;
-}
 div{
-  padding: 0.5em;
+  margin-top: 6em;
+  text-align: center
+}
+body header{
+  text-align: center;
+  height: 3em;
+  border-bottom: 1px black solid;
 }
